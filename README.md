@@ -1,26 +1,27 @@
-﻿# 左宁刑诉口诀随机抽背
+# 刑诉口诀随机抽背
 
-一个可直接部署到 GitHub Pages 的静态网页。
+这是一个可直接部署到 GitHub Pages 的静态网页。
 
-## 使用方式
+## 文件清单
 
-打开 `index.html` 即可使用。
+`index.html`：网站首页，GitHub Pages 必须保留这个文件名。
 
-## GitHub Pages 部署
+`刑诉口诀随机抽背.html`：中文文件名的跳转入口，方便在仓库里识别内容。
 
-1. 在 GitHub 新建公开仓库，推荐仓库名：`xingsu-koujue`。
-2. 上传本文件夹中的 `index.html`。
-3. 进入仓库 `Settings -> Pages`。
-4. Source 选择 `Deploy from a branch`。
-5. Branch 选择 `main`，目录选择 `/root`。
-6. 保存后等待几十秒，访问：
+`404.html`：访问不存在页面时显示的备用页面，GitHub Pages 会自动识别。
 
-```text
-https://KemenRiderZZZ.github.io/xingsu-koujue/
-```
+`.nojekyll`：告诉 GitHub Pages 不要用 Jekyll 处理文件，避免静态网页被误处理。
 
-如果仓库名使用 `KemenRiderZZZ.github.io`，则访问：
+`README.md`：仓库首页说明文件。
+
+`仓库文件说明.md`：中文文件清单，给自己或朋友看更直观。
+
+## 访问地址
 
 ```text
-https://KemenRiderZZZ.github.io/
+https://kemenriderzzz.github.io/
 ```
+
+## 本地使用
+
+直接打开 `index.html` 或 `刑诉口诀随机抽背.html` 都可以使用。
