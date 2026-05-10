@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智谱 GLM Coding 抢购助手</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182033;
+      --muted: #667085;
+      --card: rgba(255, 255, 255, 0.86);
+      --line: rgba(24, 32, 51, 0.12);
+      --accent: #176b87;
+      --accent-2: #ffb703;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 183, 3, 0.32), transparent 28rem),
+        radial-gradient(circle at 84% 12%, rgba(23, 107, 135, 0.22), transparent 26rem),
+        linear-gradient(135deg, #f9f5ea 0%, #ecf4f6 52%, #f7fbff 100%);
+    }
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .hero {
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 28px 80px rgba(24, 32, 51, 0.14);
+      backdrop-filter: blur(18px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(23, 107, 135, 0.1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 22px 0 12px;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    a.button.secondary {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.68);
+      color: #5f4600;
+      line-height: 1.7;
+    }
+    @media (max-width: 760px) {
+      main { padding: 28px 0; }
+      .hero { padding: 26px; }
+      .grid { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      a.button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">独立目录发布，不影响原随机抽背页面</span>
+      <h1>智谱 GLM Coding 抢购助手</h1>
+      <p class="lead">
+        Tampermonkey 辅助脚本。默认每天 10:00 开售，提前 3 分钟打开页面并开始监控；
+        检测到目标套餐可购买后自动点击，最终订单确认和支付仍由你手动完成。
+      </p>
+      <div class="actions">
+        <a class="button" href="./zhipu-sniper.user.js">查看主脚本</a>
+        <a class="button" href="./auto-open.user.js">查看自动开页脚本</a>
+        <a class="button secondary" href="./README.md">中文 README</a>
+        <a class="button secondary" href="./快速配置指南.md">快速配置指南</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <strong>默认时间</strong>
+          <p>每天 10:00:00 开售，09:57:00 左右提前运行。</p>
+        </div>
+        <div class="card">
+          <strong>目标套餐</strong>
+          <p>支持 Lite / Pro / Max，默认目标为 Pro，可在面板中修改。</p>
+        </div>
+        <div class="card">
+          <strong>安全边界</strong>
+          <p>只辅助点击到购买流程，支付和订单确认仍需手动完成。</p>
+        </div>
+      </div>
+      <div class="notice">
+        使用前请先登录账号，并检查浏览器是否允许 Tampermonkey 打开新标签页。抢购高峰受网络与服务端排队影响，脚本不保证一定成功。
+      </div>
+    </section>
+  </main>
+</body>
+</html>
