@@ -3,697 +3,159 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>左宁刑诉口诀随机抽背</title>
+  <title>KemenRiderZZZ 项目导航</title>
   <style>
-    :root { --bg:#f6f7f9; --panel:#fff; --text:#172033; --muted:#667085; --line:#d8dee8; --accent:#0f766e; --weak:#dff5f1; --good:#047857; --warn:#9a3412; --bad:#b42318; }
+    :root {
+      --ink: #172033;
+      --muted: #657084;
+      --paper: rgba(255, 255, 255, 0.86);
+      --line: rgba(23, 32, 51, 0.12);
+      --blue: #1c6dd0;
+      --green: #1b7f5a;
+      --amber: #f2a900;
+    }
     * { box-sizing: border-box; }
-    body { margin:0; min-height:100vh; font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif; color:var(--text); background:var(--bg); }
-    .app { width:min(1040px, calc(100vw - 32px)); margin:0 auto; padding:28px 0 40px; }
-    header { display:flex; justify-content:space-between; gap:18px; align-items:end; padding-bottom:18px; border-bottom:1px solid var(--line); }
-    h1 { margin:0; font-size:28px; line-height:1.2; }
-    .sub { margin-top:8px; color:var(--muted); font-size:14px; }
-    .stats { display:grid; grid-template-columns:repeat(3,minmax(84px,1fr)); gap:8px; min-width:300px; }
-    .stat { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 12px; text-align:center; }
-    .stat strong { display:block; font-size:20px; }
-    .stat span { color:var(--muted); font-size:12px; }
-    .controls { display:grid; grid-template-columns:1.2fr 1fr auto auto; gap:10px; margin:18px 0; }
-    select,input,button { height:40px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:var(--text); font-size:14px; padding:0 12px; }
-    button { cursor:pointer; font-weight:600; }
-    .primary { background:var(--accent); color:white; border-color:var(--accent); }
-    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; min-height:360px; display:grid; gap:16px; }
-    .badge { display:inline-flex; width:fit-content; max-width:100%; padding:5px 10px; border-radius:999px; background:var(--weak); color:var(--accent); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .prompt { color:var(--muted); font-size:18px; line-height:1.7; }
-    .answer { border:1px dashed var(--line); border-radius:8px; padding:20px; font-size:30px; line-height:1.55; font-weight:700; min-height:132px; display:flex; align-items:center; }
-    .hidden-answer { color:var(--muted); font-size:18px; font-weight:500; }
-    .source { color:var(--muted); font-size:13px; line-height:1.6; border-top:1px solid var(--line); padding-top:12px; }
-    .actions { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-    .good { color:var(--good); border-color:#a7f3d0; background:#ecfdf5; }
-    .warn { color:var(--warn); border-color:#fed7aa; background:#fff7ed; }
-    .bad { color:var(--bad); border-color:#fecaca; background:#fff1f2; }
-    .list { margin-top:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
-    .list summary { cursor:pointer; padding:14px 16px; font-weight:700; }
-    .rows { max-height:360px; overflow:auto; border-top:1px solid var(--line); }
-    .row { display:grid; grid-template-columns:72px 1fr; gap:10px; padding:10px 16px; border-bottom:1px solid #edf0f5; font-size:14px; line-height:1.5; }
-    .idx { color:var(--muted); }
-    @media (max-width:760px) { header{display:block}.stats{min-width:0;margin-top:16px}.controls{grid-template-columns:1fr}.actions{grid-template-columns:1fr 1fr}.answer{font-size:23px} }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(242, 169, 0, 0.3), transparent 24rem),
+        radial-gradient(circle at 82% 18%, rgba(28, 109, 208, 0.22), transparent 26rem),
+        linear-gradient(135deg, #fbf7ed 0%, #edf6f8 55%, #f8fbff 100%);
+    }
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .hero {
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--paper);
+      box-shadow: 0 28px 90px rgba(23, 32, 51, 0.14);
+      backdrop-filter: blur(18px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(28, 109, 208, 0.1);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    h1 {
+      margin: 20px 0 12px;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+    .project {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.74);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 54px rgba(23, 32, 51, 0.16);
+    }
+    .tag {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .tag.study { background: var(--blue); }
+    .tag.tool { background: var(--green); }
+    .project h2 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: -0.03em;
+    }
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .url {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--blue);
+      font-family: Consolas, "Cascadia Code", monospace;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--amber);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.68);
+      color: #634900;
+      line-height: 1.7;
+    }
+    @media (max-width: 760px) {
+      main { padding: 28px 0; }
+      .hero { padding: 26px; }
+      .projects { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <main class="app">
-    <header>
-      <div>
-        <h1>刑诉口诀随机抽背</h1>
-        <div class="sub">来源：《刑事诉讼法》精华记忆口诀.md，共 <span id="totalText"></span> 条。离线可用。</div>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">KemenRiderZZZ.github.io 分类导航</span>
+      <h1>项目入口</h1>
+      <p class="lead">
+        根目录现在只作为导航页使用。具体项目都放在独立子目录里，避免不同用途的页面互相混淆，也方便以后继续扩展。
+      </p>
+
+      <div class="projects">
+        <a class="project" href="./xingsu-koujue-random/">
+          <span class="tag study">学习抽背</span>
+          <h2>刑诉口诀随机抽背</h2>
+          <p>原随机抽背项目的新入口。页面内容已从根目录迁移到独立目录，原功能继续可用。</p>
+          <span class="url">/xingsu-koujue-random/</span>
+        </a>
+
+        <a class="project" href="./zhipu-glm-sniper/">
+          <span class="tag tool">辅助工具</span>
+          <h2>智谱 GLM Coding 抢购助手</h2>
+          <p>Tampermonkey 辅助脚本说明页，包含主脚本、自动开页脚本和中文配置说明。</p>
+          <span class="url">/zhipu-glm-sniper/</span>
+        </a>
       </div>
-      <div class="stats">
-        <div class="stat"><strong id="seen">0</strong><span>已抽</span></div>
-        <div class="stat"><strong id="ok">0</strong><span>掌握</span></div>
-        <div class="stat"><strong id="again">0</strong><span>待复习</span></div>
+
+      <div class="note">
+        新的随机抽背网址是：<strong>https://kemenriderzzz.github.io/xingsu-koujue-random/</strong>
       </div>
-    </header>
-    <section class="controls">
-      <select id="section"></select>
-      <input id="keyword" placeholder="关键词过滤，如：回避、取保、二审">
-      <button id="reset">重置记录</button>
-      <button id="draw" class="primary">随机抽题</button>
     </section>
-    <section class="card">
-      <span class="badge" id="badge">准备开始</span>
-      <div class="prompt" id="prompt">点击“随机抽题”。先看考点提示，默背口诀，再点“显示答案”。</div>
-      <div class="answer hidden-answer" id="answer">答案会显示在这里</div>
-      <div class="actions">
-        <button id="show">显示答案</button>
-        <button id="know" class="good">掌握</button>
-        <button id="fuzzy" class="warn">模糊</button>
-        <button id="miss" class="bad">没背出</button>
-      </div>
-      <div class="source" id="source">快捷键：Space 抽题/显示答案，1 掌握，2 模糊，3 没背出。</div>
-    </section>
-    <details class="list">
-      <summary>查看当前过滤范围内的全部口诀</summary>
-      <div class="rows" id="rows"></div>
-    </details>
   </main>
-  <script>
-    const CARDS = [
-  {
-    "section": "一、专门机关、诉讼参与人与管辖",
-    "prompt": "被害人的权利限制",
-    "answer": "被害三不，不能撤诉，不让上诉，不报食宿”。",
-    "source": "被害人的权利限制：“被害三不，不能撤诉，不让上诉，不报食宿”。"
-  },
-  {
-    "section": "一、专门机关、诉讼参与人与管辖",
-    "prompt": "单位当事人的变故处理",
-    "answer": "单位破产，继续审理；单位消灭，老大来祭”。",
-    "source": "单位当事人的变故处理：“单位破产，继续审理；单位消灭，老大来祭”。"
-  },
-  {
-    "section": "一、专门机关、诉讼参与人与管辖",
-    "prompt": "中级法院的一审管辖范围",
-    "answer": "国恐无死缺没收，证券期货中院收",
-    "source": "中级法院的一审管辖范围：“国恐无死缺没收，证券期货中院收”（指危害国家安全、恐怖活动、可能判处无期或死刑、缺席审判、没收违法所得程序以及证券期货案件）。"
-  },
-  {
-    "section": "一、专门机关、诉讼参与人与管辖",
-    "prompt": "市检自侦两类案",
-    "answer": "司法人员的非贪腐，公安不管省检定",
-    "source": "市检自侦两类案：司法人员的非贪腐，公安不管省检定"
-  },
-  {
-    "section": "二、回避制度",
-    "prompt": "适用回避的近亲属范围",
-    "answer": "上下左右近亲属，只有回避扩大化",
-    "source": "适用回避的近亲属范围：“上下左右近亲属，只有回避扩大化”（相比其他制度，回避制度中的近亲属包含三代以内旁系血亲及姻亲）。"
-  },
-  {
-    "section": "二、回避制度",
-    "prompt": "申请回避的主体与形式",
-    "answer": "当法辩诉无近亲，口头书面申回避”。——还可以申请重新鉴定",
-    "source": "申请回避的主体与形式：“当法辩诉无近亲，口头书面申回避”。——还可以申请重新鉴定"
-  },
-  {
-    "section": "二、回避制度",
-    "prompt": "决定回避的主体",
-    "answer": "回避谁当家，组织决老大，老大决其他”。本级的，不是上级的",
-    "source": "决定回避的主体：“回避谁当家，组织决老大，老大决其他”。本级的，不是上级的"
-  },
-  {
-    "section": "二、回避制度",
-    "prompt": "当庭申请公诉人回避的处理",
-    "answer": "回避公诉人，法庭来审查。理由若合法，休庭通知检；理由不合法，驳回不理他”。",
-    "source": "当庭申请公诉人回避的处理：“回避公诉人，法庭来审查。理由若合法，休庭通知检；理由不合法，驳回不理他”。"
-  },
-  {
-    "section": "三、辩护与代理",
-    "prompt": "应当提供法律援助的情形",
-    "answer": "盲精未、无死缺、申排非，应法援”。",
-    "source": "应当提供法律援助的情形：“盲精未、无死缺、申排非，应法援”。"
-  },
-  {
-    "section": "三、辩护与代理",
-    "prompt": "不得担任辩护人的范围",
-    "answer": "刑罚自由能力，绝对不得辩护；现陪利外离开，监护近亲才行”。",
-    "source": "不得担任辩护人的范围：“刑罚自由能力，绝对不得辩护；现陪利外离开，监护近亲才行”。"
-  },
-  {
-    "section": "三、辩护与代理",
-    "prompt": "律师调查取证规则",
-    "answer": "律师取证直接去，若找被害需审批，没有义务配合你”。",
-    "source": "律师调查取证规则：“律师取证直接去，若找被害需审批，没有义务配合你”。"
-  },
-  {
-    "section": "三、辩护与代理",
-    "prompt": "辩护律师告知无罪证据的义务",
-    "answer": "不在场，不够大，不正常，应告知”。",
-    "source": "辩护律师告知无罪证据的义务：“不在场，不够大，不正常，应告知”。"
-  },
-  {
-    "section": "三、辩护与代理",
-    "prompt": "揭发检举违法行为的义务",
-    "answer": "准备正在国公人，揭发检举这坏人",
-    "source": "揭发检举违法行为的义务：“准备正在国公人，揭发检举这坏人”（指准备或正在实施危害国家安全、公共安全或严重危害他人人身安全的犯罪）。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "补强证据规则",
-    "answer": "补强两证A补B，不可派生或同一”。",
-    "source": "补强证据规则：“补强两证A补B，不可派生或同一”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "供述",
-    "answer": "暴力、威胁、好痛苦，不放、不录、重供述，没有爸妈和翻译，不让核对应排除”。",
-    "source": "供述：“暴力、威胁、好痛苦，不放、不录、重供述，没有爸妈和翻译，不让核对应排除”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "证言/被害人陈述",
-    "answer": "暴力、威胁、拘到哭，不分、不核、听不出，证人被害好无辜，无需痛苦也排除”。",
-    "source": "证言/被害人陈述：“暴力、威胁、拘到哭，不分、不核、听不出，证人被害好无辜，无需痛苦也排除”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "物证/书证",
-    "answer": "物书分情况，程序错可补，来源无应排”。——“来源”附笔录和清单",
-    "source": "物证/书证：“物书分情况，程序错可补，来源无应排”。——“来源”附笔录和清单"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "鉴定意见",
-    "answer": "鉴定意见脆，出错就作废”。",
-    "source": "鉴定意见：“鉴定意见脆，出错就作废”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "勘查笔录",
-    "answer": "勘查难度大，解释原谅他”。",
-    "source": "勘查笔录：“勘查难度大，解释原谅他”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "辨认笔录",
-    "answer": "昏暗见个猪，辨认要排除",
-    "source": "辨认笔录：“昏暗见个猪，辨认要排除”（指没有混杂、明显暗示、提前见到、没有个别进行、主持人不合格）。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "电子数据",
-    "answer": "数据不能改，修补篡即排”。",
-    "source": "电子数据：“数据不能改，修补篡即排”。"
-  },
-  {
-    "section": "四、刑事证据与证明",
-    "prompt": "辨认的混杂数量底线",
-    "answer": "辨认混杂七十五，检院物照少五张",
-    "source": "辨认的混杂数量底线：“辨认混杂七十五，检院物照少五张”（公安辨认人不少于7，照片不少于10，物不少于5；检察院辨认物或照片均不少于5）。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "取保候审适用条件",
-    "answer": "管制拘役附加刑，有期病孕无危险，期限届满未办结，可以取保公安管”。",
-    "source": "取保候审适用条件：“管制拘役附加刑，有期病孕无危险，期限届满未办结，可以取保公安管”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "取保候审的义务",
-    "answer": "取保禁足变要告，不扰证据传即到；上交证件禁止令，办案机关酌情考”。",
-    "source": "取保候审的义务：“取保禁足变要告，不扰证据传即到；上交证件禁止令，办案机关酌情考”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "取保候审自动解除",
-    "answer": "后面生效执行，取保自动取消”。",
-    "source": "取保候审自动解除：“后面生效执行，取保自动取消”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "监视居住的适用条件",
-    "answer": "监居条件：本该逮捕却病孕，特情届满唯一人；本可取保却发现，没人没钱可监居”。",
-    "source": "监视居住的适用条件：“监居条件：本该逮捕却病孕，特情届满唯一人；本可取保却发现，没人没钱可监居”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "监视居住的执行地点",
-    "answer": "监居地点：没家指家，有家在家；国恐侦批，有家指家”。",
-    "source": "监视居住的执行地点：“监居地点：没家指家，有家在家；国恐侦批，有家指家”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "公安先行拘留的条件",
-    "answer": "现行现场有证据，要死要逃毁证据，不知是谁流多结，公安无证可先拘”。",
-    "source": "公安先行拘留的条件：“现行现场有证据，要死要逃毁证据，不知是谁流多结，公安无证可先拘”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "审查批捕应当讯问的情形",
-    "answer": "逮捕疑问向检话，重大疑难又违法，认罪认罚盲精未，审查批捕应问他”。",
-    "source": "审查批捕应当讯问的情形：“逮捕疑问向检话，重大疑难又违法，认罪认罚盲精未，审查批捕应问他”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "审判阶段逮捕的变更或释放",
-    "answer": "免处罚、非监禁、超期限，法院逮捕放或变”。",
-    "source": "审判阶段逮捕的变更或释放：“免处罚、非监禁、超期限，法院逮捕放或变”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "羁押必要性审查的释放建议",
-    "answer": "逮捕之人没犯罪，拘役以下超刑期，可以取保或监居，检院应当提建议”。",
-    "source": "羁押必要性审查的释放建议：“逮捕之人没犯罪，拘役以下超刑期，可以取保或监居，检院应当提建议”。"
-  },
-  {
-    "section": "五、强制措施",
-    "prompt": "应当逮捕的情形",
-    "answer": "证据、刑罚、有危险，应当逮捕公安管",
-    "source": "应当逮捕的情形：证据、刑罚、有危险，应当逮捕公安管"
-  },
-  {
-    "section": "六、附带民事诉讼及期间",
-    "prompt": "附民被告人的范围",
-    "answer": "共侵被告人、监护继承人，附民责任人”。",
-    "source": "附民被告人的范围：“共侵被告人、监护继承人，附民责任人”。"
-  },
-  {
-    "section": "六、附带民事诉讼及期间",
-    "prompt": "附民当事人不到庭的处理",
-    "answer": "原告不来，应按撤诉；被告不来，可以缺席。下落不明，告知另诉”。",
-    "source": "附民当事人不到庭的处理：“原告不来，应按撤诉；被告不来，可以缺席。下落不明，告知另诉”。"
-  },
-  {
-    "section": "六、附带民事诉讼及期间",
-    "prompt": "二审附民只有部分错误的处理",
-    "answer": "刑上，民错，民再审，刑维持。民上，刑错，刑再审，民一并”。",
-    "source": "二审附民只有部分错误的处理：“刑上，民错，民再审，刑维持。民上，刑错，刑再审，民一并”。"
-  },
-  {
-    "section": "六、附带民事诉讼及期间",
-    "prompt": "期间的重新计算",
-    "answer": "另有重罪、补侦发回、改变管辖，期限重推”。",
-    "source": "期间的重新计算：“另有重罪、补侦发回、改变管辖，期限重推”。"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "法定不追究刑事责任的情形",
-    "answer": "显时特告死，他坏不追责",
-    "source": "法定不追究刑事责任的情形：“显时特告死，他坏不追责（‘其他’主要包括：坏小孩，考验乖，怪叔叔，是人才）"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "讯问地点的确定",
-    "answer": "一般公安讯问室，特定情况就地问。已送看的看守所，未送看的可在家”。",
-    "source": "讯问地点的确定：“一般公安讯问室，特定情况就地问。已送看的看守所，未送看的可在家”。"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "应当全程录音录像的情形",
-    "answer": "检监指居无死重，讯问应当录音像",
-    "source": "应当全程录音录像的情形：“检监指居无死重，讯问应当录音像”（即检察机关自侦、监察委调查、指定居所监视居住、可能判处无期/死刑/其他重大犯罪案件）。录音录像同步进行"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "冻结电子数据的情形",
-    "answer": "大长直、可冻结",
-    "source": "冻结电子数据的情形：大长直、可冻结"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "核准追诉期间的效力",
-    "answer": "核准追，可强制。不停侦，不起诉”。",
-    "source": "核准追诉期间的效力：“核准追，可强制。不停侦，不起诉”。"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "无需签署认罪认罚具结书的情形",
-    "answer": "盲聋哑，精神病，大人不干不具结”。",
-    "source": "无需签署认罪认罚具结书的情形：“盲聋哑，精神病，大人不干不具结”。"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "存疑不起诉的补侦次数限制",
-    "answer": "二补不足应不诉；一补不足可不诉”。",
-    "source": "存疑不起诉的补侦次数限制：“二补不足应不诉；一补不足可不诉”。"
-  },
-  {
-    "section": "一、 侦查与审查起诉阶段",
-    "prompt": "“特别不追责”的处理",
-    "answer": "自愿供，大功益，高检核，不追责”。",
-    "source": "“特别不追责”的处理：“自愿供，大功益，高检核，不追责”。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "集中审理原则的核心要求",
-    "answer": "不换不断集中审，若换若断重新判”。",
-    "source": "集中审理原则的核心要求：“不换不断集中审，若换若断重新判”。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "两审终审制的例外",
-    "answer": "两审终审三例外，最高一审死复核，法定刑下减轻判”。",
-    "source": "两审终审制的例外：“两审终审三例外，最高一审死复核，法定刑下减轻判”。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "合议庭组成人数方式",
-    "answer": "基中三三七，三五七三七，复三上三五，最高三五七",
-    "source": "合议庭组成人数方式：“基中三三七，三五七三七，复三上三五，最高三五七”（即根据基层、中院、高院、最高院以及一审、二审、复核程序的不同确定人数）。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "人民陪审员的任职条件",
-    "answer": "二八高中，守法好人，可作陪审。法律职业，违法违纪，不可陪审”。",
-    "source": "人民陪审员的任职条件：“二八高中，守法好人，可作陪审。法律职业，违法违纪，不可陪审”。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "必须组成七人合议庭的情形",
-    "answer": "十无死重",
-    "source": "必须组成七人合议庭的情形：“十无死重（社会影响巨大），拆环食药，法三陪四”。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "人民陪审员的职权限制",
-    "answer": "陪审不可以，七C五二一",
-    "source": "人民陪审员的职权限制：“陪审不可以，七C五二一”（七人庭不表决法律、不可坐C位当审判长、不参加五人庭、不参加二审及死刑复核、不参加最高院一审）。"
-  },
-  {
-    "section": "二、 刑事审判基础理论与组织",
-    "prompt": "应当提交审判委员会讨论的情形",
-    "answer": "死刑再审上审委，高院死缓不上会”。",
-    "source": "应当提交审判委员会讨论的情形：“死刑再审上审委，高院死缓不上会”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "庭前审查应当退回检察院的情形",
-    "answer": "亲告不在不应管，死亡时效已赦免，无事又来应退检”。",
-    "source": "庭前审查应当退回检察院的情形：“亲告不在不应管，死亡时效已赦免，无事又来应退检”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "应当或可以召开庭前会议的情形",
-    "answer": "多杂大，可开会。申排非，应开会",
-    "source": "应当或可以召开庭前会议的情形：“多杂大，可开会。申排非，应开会”（应当提供材料和线索）。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "一般发问顺序",
-    "answer": "先说后问，先控后辩，先言后物",
-    "source": "一般发问顺序：“先说后问，先控后辩，先言后物"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "可以不出庭的情况",
-    "answer": "重病、远离、在国外，作证可以不出庭",
-    "source": "可以不出庭的情况：重病、远离、在国外，作证可以不出庭"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "审判前变更审判人员",
-    "answer": "评议前，来不了，人要换，重审判；评议后，来不了，人不换，名写全",
-    "source": "审判前变更审判人员：“评议前，来不了，人要换，重审判；评议后，来不了，人不换，名写全"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "延期审理与中止审理的区别",
-    "answer": "等人等证可延期，不可抗力需中止”。",
-    "source": "延期审理与中止审理的区别：“等人等证可延期，不可抗力需中止”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "应当或可以休庭的情形",
-    "answer": "回避审完缺律师，应当休庭作处置；等人等证作准备，可以休庭等一会”。",
-    "source": "应当或可以休庭的情形：“回避审完缺律师，应当休庭作处置；等人等证作准备，可以休庭等一会”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "对辩护人等违反法庭秩序的惩戒",
-    "answer": "被动出局或罚款，具结保证仍可辩；主动不来拘再赶，不可代理不可辩”。",
-    "source": "对辩护人等违反法庭秩序的惩戒：“被动出局或罚款，具结保证仍可辩；主动不来拘再赶，不可代理不可辩”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "自诉案件的程序特点",
-    "answer": "自诉调和撤反简，公转自诉不调反",
-    "source": "自诉案件的程序特点：“自诉调和撤反简，公转自诉不调反”（公诉转自诉的案件不可调解和反诉）。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "简易程序适用的积极条件",
-    "answer": "基层认罪，清楚同意，可以简易”。",
-    "source": "简易程序适用的积极条件：“基层认罪，清楚同意，可以简易”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "简易程序适用的消极条件",
-    "answer": "盲精重大，可能无罪，不可简易”。",
-    "source": "简易程序适用的消极条件：“盲精重大，可能无罪，不可简易”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "速裁程序适用的积极条件",
-    "answer": "三年罪罚，清楚同意，一人速裁”。",
-    "source": "速裁程序适用的积极条件：“三年罪罚，清楚同意，一人速裁”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "速裁程序适用的消极条件",
-    "answer": "盲精重大，可能无罪，小孩未赔，不可速裁”。",
-    "source": "速裁程序适用的消极条件：“盲精重大，可能无罪，小孩未赔，不可速裁”。"
-  },
-  {
-    "section": "三、 第一审程序的各项规则",
-    "prompt": "简易/速裁转为普通程序的条件",
-    "answer": "无罪无责，不清不认，由简转繁，重新审判",
-    "source": "简易/速裁转为普通程序的条件：“无罪无责，不清不认，由简转繁，重新审判”（速裁中还包含“不情愿认罚”）。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "二审抗诉的流转程序",
-    "answer": "二审抗，下抗上。抗诉书，同级放”。",
-    "source": "二审抗诉的流转程序：“二审抗，下抗上。抗诉书，同级放”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "撤回上诉/抗诉的生效时间",
-    "answer": "期满前撤诉，期满日生效；期满后撤诉，送达日生效”。",
-    "source": "撤回上诉/抗诉的生效时间：“期满前撤诉，期满日生效；期满后撤诉，送达日生效”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "二审应当或可以开庭的情形",
-    "answer": "死抗事实有异议，二审应当要开庭；庭前程序事不清，可以发回不开庭”。",
-    "source": "二审应当或可以开庭的情形：“死抗事实有异议，二审应当要开庭；庭前程序事不清，可以发回不开庭”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "二审法院的审理结果",
-    "answer": "二审全对应维持，法律量刑应改判，程序违法应发回，事实不清可改回”。",
-    "source": "二审法院的审理结果：“二审全对应维持，法律量刑应改判，程序违法应发回，事实不清可改回”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "最高法院死刑复核的处理结果",
-    "answer": "复核全对应核准，纠正瑕疵也能核，事实程序应发回，量刑不当可改回”。",
-    "source": "最高法院死刑复核的处理结果：“复核全对应核准，纠正瑕疵也能核，事实程序应发回，量刑不当可改回”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "暂停执行死刑审查后的处理",
-    "answer": "死刑停执，怀孕改判，不死发回，还死继续”。",
-    "source": "暂停执行死刑审查后的处理：“死刑停执，怀孕改判，不死发回，还死继续”。"
-  },
-  {
-    "section": "四、 第二审与死刑复核程序",
-    "prompt": "判处死刑立即执行案件的复核后的处理",
-    "answer": "复核全对应核准，纠正瑕疵也能核，事实程序应发回，量形不当可改回",
-    "source": "判处死刑立即执行案件的复核后的处理：复核全对应核准，纠正瑕疵也能核，事实程序应发回，量形不当可改回"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "申诉的主体范围",
-    "answer": "当事人一家，案外有利害，申诉律师代”。",
-    "source": "申诉的主体范围：“当事人一家，案外有利害，申诉律师代”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "再审适用的审级规则",
-    "answer": "法院再审，恢复原状。原一还一，二提用二”。",
-    "source": "再审适用的审级规则：“法院再审，恢复原状。原一还一，二提用二”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "再审期间的执行效力",
-    "answer": "申诉绝不停执行，再审无罪届满停”。",
-    "source": "再审期间的执行效力：“申诉绝不停执行，再审无罪届满停”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "再审法院的审理结果",
-    "answer": "再审全对应维持，纠正瑕疵也维持，法律量刑应改判，事实不清可改回”。",
-    "source": "再审法院的审理结果：“再审全对应维持，纠正瑕疵也维持，法律量刑应改判，事实不清可改回”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "不同刑罚的执行机关分配",
-    "answer": "法院生死钱，监狱长住户，矫正非监禁，其他给公安”。",
-    "source": "不同刑罚的执行机关分配：“法院生死钱，监狱长住户，矫正非监禁，其他给公安”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "社区矫正终止的情形",
-    "answer": "满赦解，收死终，矫正停”。",
-    "source": "社区矫正终止的情形：“满赦解，收死终，矫正停”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "应当暂停执行死刑的情形",
-    "answer": "漏罪共犯有变化，立功怀孕先不杀”。",
-    "source": "应当暂停执行死刑的情形：“漏罪共犯有变化，立功怀孕先不杀”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "暂停执行死刑审查后的处理",
-    "answer": "死刑停执，怀孕改判，不死发回，还死继续",
-    "source": "暂停执行死刑审查后的处理：死刑停执，怀孕改判，不死发回，还死继续"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "暂予监外执行的批准/决定机关",
-    "answer": "交付前监外，法院说了算；交付后监外，省监市公安”。",
-    "source": "暂予监外执行的批准/决定机关：“交付前监外，法院说了算；交付后监外，省监市公安”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "监外执行、社区矫正、收监的决定机关",
-    "answer": "谁决定监外、谁决定矫正、谁决定收监，同一个",
-    "source": "监外执行、社区矫正、收监的决定机关：谁决定监外、谁决定矫正、谁决定收监，同一个"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "社区矫正",
-    "answer": "管制、缓刑、假释、监外",
-    "source": "社区矫正：管制、缓刑、假释、监外"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "减刑、假释应当开庭的情形",
-    "answer": "重大立功影响宽，破格减刑有意见，职务黑金开庭判”。",
-    "source": "减刑、假释应当开庭的情形：“重大立功影响宽，破格减刑有意见，职务黑金开庭判”。"
-  },
-  {
-    "section": "五、 审判监督程序（再审程序）",
-    "prompt": "执行中发现新情况的处理",
-    "answer": "执行发现有变化，新罪漏罪送检察，原判有错给检法”。",
-    "source": "执行中发现新情况的处理：“执行发现有变化，新罪漏罪送检察，原判有错给检法”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "附条件不起诉的适用条件",
-    "answer": "未成年、四五六、一起悔，附不诉”。",
-    "source": "附条件不起诉的适用条件：“未成年、四五六、一起悔，附不诉”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "附条件不起诉的迁居考察",
-    "answer": "未成年，受考验。经批准，离市县。家可搬，检不变”。",
-    "source": "附条件不起诉的迁居考察：“未成年，受考验。经批准，离市县。家可搬，检不变”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "缺席审判程序的适用对象",
-    "answer": "国恐贪、病半年、死无罪、死再审，可缺席”。",
-    "source": "缺席审判程序的适用对象：“国恐贪、病半年、死无罪、死再审，可缺席”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "逃匿、死亡案件违法所得没收程序的适用条件",
-    "answer": "贪恐重大逃一年，或者死亡可没收”。",
-    "source": "逃匿、死亡案件违法所得没收程序的适用条件：“贪恐重大逃一年，或者死亡可没收”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "违法所得没收程序的审理程序是否开庭",
-    "answer": "有人来，应开庭，没人来，可不开",
-    "source": "违法所得没收程序的审理程序是否开庭：有人来，应开庭，没人来，可不开"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "依法不负刑事责任的精神病人强制医疗程序适用条件",
-    "answer": "公暴继定",
-    "source": "依法不负刑事责任的精神病人强制医疗程序适用条件：“公暴继定（宫保鸡丁），强制医疗”。"
-  },
-  {
-    "section": "第四编特别程序",
-    "prompt": "强制医疗的解除申请",
-    "answer": "初次申请不受限，后续申请隔半年”。",
-    "source": "强制医疗的解除申请：“初次申请不受限，后续申请隔半年”。"
-  }
-];
-    const state = JSON.parse(localStorage.getItem("xingsu-koujue-state") || "{}");
-    let current = null;
-    let answerShown = false;
-    const $ = (id) => document.getElementById(id);
-    const sectionEl = $("section");
-    const keywordEl = $("keyword");
-    $("totalText").textContent = CARDS.length;
-    function save(){ localStorage.setItem("xingsu-koujue-state", JSON.stringify(state)); }
-    function sections(){ return ["全部章节", ...Array.from(new Set(CARDS.map(c => c.section))).filter(Boolean)]; }
-    function filtered(){
-      const sec = sectionEl.value;
-      const key = keywordEl.value.trim();
-      return CARDS.filter(c => (sec === "全部章节" || c.section === sec) && (!key || [c.section,c.prompt,c.answer,c.source].join(" ").includes(key)));
-    }
-    function choose(){
-      const pool = filtered();
-      if (!pool.length) return null;
-      const weighted = [];
-      for (const card of pool) {
-        const rec = state[card.answer] || {};
-        const w = rec.last === "miss" ? 6 : rec.last === "fuzzy" ? 3 : rec.last === "know" ? 1 : 4;
-        for (let i=0;i<w;i++) weighted.push(card);
-      }
-      return weighted[Math.floor(Math.random() * weighted.length)];
-    }
-    function renderCard(card){
-      current = card; answerShown = false;
-      if (!card) {
-        $("badge").textContent = "没有匹配结果";
-        $("prompt").textContent = "换一个章节或关键词。";
-        $("answer").textContent = "无";
-        $("answer").className = "answer hidden-answer";
-        $("source").textContent = "";
-        return;
-      }
-      $("badge").textContent = card.section + " · 第 " + (CARDS.indexOf(card)+1) + " 条";
-      $("prompt").textContent = card.prompt || "背诵口诀";
-      $("answer").textContent = "先默背，再显示答案";
-      $("answer").className = "answer hidden-answer";
-      $("source").textContent = "原条目：" + card.source;
-      state[card.answer] = { ...(state[card.answer] || {}), seen: (state[card.answer]?.seen || 0) + 1 };
-      save(); renderStats();
-    }
-    function showAnswer(){ if(!current) return; answerShown = true; $("answer").textContent = current.answer; $("answer").className = "answer"; }
-    function mark(kind){ if(!current) return; state[current.answer] = { ...(state[current.answer] || {}), last: kind, at: Date.now(), seen: state[current.answer]?.seen || 1 }; save(); renderStats(); renderCard(choose()); }
-    function renderStats(){ const values = Object.values(state); $("seen").textContent = values.filter(v=>v.seen).length; $("ok").textContent = values.filter(v=>v.last==="know").length; $("again").textContent = values.filter(v=>v.last==="fuzzy"||v.last==="miss").length; }
-    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-    function renderRows(){ $("rows").innerHTML = filtered().map(c => '<div class="row"><div class="idx">#'+(CARDS.indexOf(c)+1)+'</div><div><strong>'+escapeHtml(c.prompt)+'</strong><br>'+escapeHtml(c.answer)+'</div></div>').join(""); }
-    for (const s of sections()) { const opt = document.createElement("option"); opt.value = s; opt.textContent = s; sectionEl.appendChild(opt); }
-    $("draw").onclick = () => renderCard(choose());
-    $("show").onclick = showAnswer;
-    $("know").onclick = () => mark("know");
-    $("fuzzy").onclick = () => mark("fuzzy");
-    $("miss").onclick = () => mark("miss");
-    $("reset").onclick = () => { if(confirm("清空本页背诵记录？")) { for (const k of Object.keys(state)) delete state[k]; save(); renderStats(); } };
-    sectionEl.onchange = renderRows;
-    keywordEl.oninput = renderRows;
-    document.addEventListener("keydown", e => {
-      if (e.target.tagName === "INPUT") return;
-      if (e.code === "Space") { e.preventDefault(); answerShown ? renderCard(choose()) : (current ? showAnswer() : renderCard(choose())); }
-      if (e.key === "1") mark("know");
-      if (e.key === "2") mark("fuzzy");
-      if (e.key === "3") mark("miss");
-    });
-    renderStats(); renderRows(); renderCard(choose());
-  </script>
 </body>
 </html>

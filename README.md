@@ -1,27 +1,26 @@
-# 刑诉口诀随机抽背
+# KemenRiderZZZ GitHub Pages
 
-这是一个可直接部署到 GitHub Pages 的静态网页。
+这个仓库用于发布多个静态网页项目。根目录现在只作为项目导航页使用，具体项目都放在独立子目录中，避免不同用途的页面互相混淆。
 
-## 文件清单
+## 项目入口
 
-`index.html`：网站首页，GitHub Pages 必须保留这个文件名。
+| 项目 | 目录 | 访问地址 |
+| --- | --- | --- |
+| 刑诉口诀随机抽背 | `xingsu-koujue-random/` | `https://kemenriderzzz.github.io/xingsu-koujue-random/` |
+| 智谱 GLM Coding 抢购助手 | `zhipu-glm-sniper/` | `https://kemenriderzzz.github.io/zhipu-glm-sniper/` |
 
-`刑诉口诀随机抽背.html`：中文文件名的跳转入口，方便在仓库里识别内容。
+## 根目录文件
 
-`404.html`：访问不存在页面时显示的备用页面，GitHub Pages 会自动识别。
+| 文件 | 用途 |
+| --- | --- |
+| `index.html` | 项目导航页 |
+| `404.html` | 访问不存在页面时的导航页 |
+| `.nojekyll` | 告诉 GitHub Pages 不使用 Jekyll 处理静态文件 |
+| `README.md` | 仓库说明 |
+| `仓库文件说明.md` | 中文文件结构说明 |
 
-`.nojekyll`：告诉 GitHub Pages 不要用 Jekyll 处理文件，避免静态网页被误处理。
+## 维护规则
 
-`README.md`：仓库首页说明文件。
-
-`仓库文件说明.md`：中文文件清单，给自己或朋友看更直观。
-
-## 访问地址
-
-```text
-https://kemenriderzzz.github.io/
-```
-
-## 本地使用
-
-直接打开 `index.html` 或 `刑诉口诀随机抽背.html` 都可以使用。
+- 新项目请放入独立子目录。
+- 不再把具体项目直接放在根目录。
+- 根目录只维护导航、说明和 Pages 必需文件。
