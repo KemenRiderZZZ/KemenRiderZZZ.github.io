@@ -1,8 +1,12 @@
-# 刑诉口诀随机抽背
+# 左宁刑诉随机抽背
 
-这是原来的刑诉口诀随机抽背项目。现在已从仓库根目录迁移到独立子目录，便于和其它项目分类管理。
+这是当前仓库保留下来的核心项目。主入口已经回到根域名，同时继续兼容原来的子路径访问方式。
 
-## 新访问地址
+## 访问地址
+
+```text
+https://kemenriderzzz.github.io/
+```
 
 ```text
 https://kemenriderzzz.github.io/xingsu-koujue-random/
@@ -12,9 +16,9 @@ https://kemenriderzzz.github.io/xingsu-koujue-random/
 
 | 文件 | 用途 |
 | --- | --- |
-| `index.html` | 随机抽背网页主体 |
+| `index.html` | 左宁刑诉随机抽背网页主体 |
 | `刑诉口诀随机抽背.html` | 中文文件名入口，会跳转到 `index.html` |
-| `404.html` | 项目迁移前保留下来的备用页面 |
+| `404.html` | 兼容旧路径时的备用页面 |
 
 ## 维护建议
 

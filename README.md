@@ -1,26 +1,25 @@
-# KemenRiderZZZ GitHub Pages
+# 左宁刑诉随机抽背
 
-这个仓库用于发布多个静态网页项目。根目录现在只作为项目导航页使用，具体项目都放在独立子目录中，避免不同用途的页面互相混淆。
+这个仓库现在只用于发布“左宁刑诉随机抽背”这个 GitHub Pages 静态项目。
 
-## 项目入口
+## 访问地址
 
-| 项目 | 目录 | 访问地址 |
-| --- | --- | --- |
-| 刑诉口诀随机抽背 | `xingsu-koujue-random/` | `https://kemenriderzzz.github.io/xingsu-koujue-random/` |
-| 智谱 GLM Coding 抢购助手 | `zhipu-glm-sniper/` | `https://kemenriderzzz.github.io/zhipu-glm-sniper/` |
+- 主入口：`https://kemenriderzzz.github.io/`
+- 兼容旧地址：`https://kemenriderzzz.github.io/xingsu-koujue-random/`
 
-## 根目录文件
+## 仓库结构
 
-| 文件 | 用途 |
+| 路径 | 用途 |
 | --- | --- |
-| `index.html` | 项目导航页 |
-| `404.html` | 访问不存在页面时的导航页 |
-| `.nojekyll` | 告诉 GitHub Pages 不使用 Jekyll 处理静态文件 |
+| `index.html` | 根域名入口，会自动跳转到左宁刑诉项目页 |
+| `404.html` | 通用 404 页面 |
+| `.nojekyll` | 告诉 GitHub Pages 不使用 Jekyll |
+| `xingsu-koujue-random/` | 左宁刑诉随机抽背项目主体 |
 | `README.md` | 仓库说明 |
 | `仓库文件说明.md` | 中文文件结构说明 |
 
 ## 维护规则
 
-- 新项目请放入独立子目录。
-- 不再把具体项目直接放在根目录。
-- 根目录只维护导航、说明和 Pages 必需文件。
+- 根域名保持不变，继续作为主入口使用。
+- 兼容旧链接时，优先保持 `xingsu-koujue-random/` 子路径可访问。
+- 更新项目内容时，主要修改 `xingsu-koujue-random/index.html`。

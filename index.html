@@ -3,159 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KemenRiderZZZ 项目导航</title>
+  <meta http-equiv="refresh" content="0; url=./xingsu-koujue-random/">
+  <title>左宁刑诉随机抽背</title>
   <style>
-    :root {
-      --ink: #172033;
-      --muted: #657084;
-      --paper: rgba(255, 255, 255, 0.86);
-      --line: rgba(23, 32, 51, 0.12);
-      --blue: #1c6dd0;
-      --green: #1b7f5a;
-      --amber: #f2a900;
-    }
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      color: var(--ink);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: #172033;
       font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
-      background:
-        radial-gradient(circle at 16% 12%, rgba(242, 169, 0, 0.3), transparent 24rem),
-        radial-gradient(circle at 82% 18%, rgba(28, 109, 208, 0.22), transparent 26rem),
-        linear-gradient(135deg, #fbf7ed 0%, #edf6f8 55%, #f8fbff 100%);
+      background: linear-gradient(135deg, #f6f7f9, #edf6f8);
     }
-    main {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-    .hero {
-      padding: 42px;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      background: var(--paper);
-      box-shadow: 0 28px 90px rgba(23, 32, 51, 0.14);
-      backdrop-filter: blur(18px);
-    }
-    .eyebrow {
-      display: inline-flex;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(28, 109, 208, 0.1);
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 13px;
+    section {
+      width: min(720px, 100%);
+      padding: 34px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 24px 70px rgba(23, 32, 51, 0.14);
     }
     h1 {
-      margin: 20px 0 12px;
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.15;
     }
-    .lead {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 18px;
+    p {
+      color: #657084;
       line-height: 1.8;
     }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 30px;
-    }
-    .project {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-height: 260px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.74);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .project:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 54px rgba(23, 32, 51, 0.16);
-    }
-    .tag {
-      width: fit-content;
-      padding: 6px 10px;
-      border-radius: 999px;
+    a {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #0f766e;
       color: #fff;
-      font-size: 12px;
+      text-decoration: none;
       font-weight: 800;
     }
-    .tag.study { background: var(--blue); }
-    .tag.tool { background: var(--green); }
-    .project h2 {
-      margin: 0;
-      font-size: 26px;
-      letter-spacing: -0.03em;
-    }
-    .project p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-    .url {
-      margin-top: auto;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      color: var(--blue);
+    code {
       font-family: Consolas, "Cascadia Code", monospace;
-      font-size: 13px;
-      word-break: break-all;
-    }
-    .note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--amber);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.68);
-      color: #634900;
-      line-height: 1.7;
-    }
-    @media (max-width: 760px) {
-      main { padding: 28px 0; }
-      .hero { padding: 26px; }
-      .projects { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <span class="eyebrow">KemenRiderZZZ.github.io 分类导航</span>
-      <h1>项目入口</h1>
-      <p class="lead">
-        根目录现在只作为导航页使用。具体项目都放在独立子目录里，避免不同用途的页面互相混淆，也方便以后继续扩展。
-      </p>
-
-      <div class="projects">
-        <a class="project" href="./xingsu-koujue-random/">
-          <span class="tag study">学习抽背</span>
-          <h2>刑诉口诀随机抽背</h2>
-          <p>原随机抽背项目的新入口。页面内容已从根目录迁移到独立目录，原功能继续可用。</p>
-          <span class="url">/xingsu-koujue-random/</span>
-        </a>
-
-        <a class="project" href="./zhipu-glm-sniper/">
-          <span class="tag tool">辅助工具</span>
-          <h2>智谱 GLM Coding 抢购助手</h2>
-          <p>Tampermonkey 辅助脚本说明页，包含主脚本、自动开页脚本和中文配置说明。</p>
-          <span class="url">/zhipu-glm-sniper/</span>
-        </a>
-      </div>
-
-      <div class="note">
-        新的随机抽背网址是：<strong>https://kemenriderzzz.github.io/xingsu-koujue-random/</strong>
-      </div>
-    </section>
-  </main>
+  <section>
+    <h1>左宁刑诉随机抽背</h1>
+    <p>根域名现在直接作为左宁刑诉随机抽背的入口使用，页面会自动跳转。</p>
+    <p>如果没有自动跳转，可以手动进入：<code>/xingsu-koujue-random/</code></p>
+    <a href="./xingsu-koujue-random/">进入左宁刑诉随机抽背</a>
+  </section>
 </body>
 </html>
